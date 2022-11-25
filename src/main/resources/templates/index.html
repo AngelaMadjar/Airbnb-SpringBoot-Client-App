@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: "";
+            background-image: url('https://img.freepik.com/free-vector/realistic-travel-background-with-elements_52683-77784.jpg?w=2000');
+            background-size: cover;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.4;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- USING THE HEADER FRAGMENT FROM FRAGMENTS/HEADER-->
+    <div th:replace="fragments/header :: header"> </div>
+
+
+    <section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark hero">
+        <div class="container-fluid">
+            <div class="row  justify-content-center align-items-center d-flex text-center h-100">
+                <div class="col-12 col-md-8  h-50 ">
+                    <h1 class="display-2  text-light mb-2 mt-5"><strong><i>AirBnb accommodations</i></strong> </h1>
+                    <p class="lead text-light mb-5"><strong><i>And price estimator</i></strong></p>
+                    <p><a href="/accommodations" class="btn bg-danger shadow-lg btn-round text-light btn-lg btn-rised">Explore more</a></p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <br>
+
+    <section>
+        <div style="text-align: center;">
+            <p class="lead text-dark mb-5">
+                <strong>
+                    <i>This is a simple Spring Boot web application coded in Java. It enables CRUD operations on listed AirBnb accommodations persisting in a PostgreSQL database. Furthermore, it communicates with a Price Predictor microservice that estimates the price per night of an accommodation depending on its characteristics and features. The Price Predictor is a Linear Regression Machine Learning model deployed as a REST API in a Flask application.</i>
+                </strong>
+            </p>
+        </div>
+    </section>
+
+    <br>
+    <br>
+
+    <!-- USING THE FOOTER FRAGMENT FROM FRAGMENTS/FOOTER-->
+    <div th:replace="fragments/footer :: footer"> </div>
+</body>
+</html>
